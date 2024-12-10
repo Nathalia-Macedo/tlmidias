@@ -1,17 +1,30 @@
-
-import logo from '../Assets/logo.png'
-import Button from './ui/Button'
-
-
+import React from 'react';
+import logo from '../Assets/logo.jpg'
+import Button from './ui/Button';
+import TLMidiasLogo from '../Assets/Vector.png'
+import HeroBackground from '../Assets/Hero.png';
+import BannerBackground from '../Assets/banner.jpg';
 
 export default function HeroSection() {
   return (
-    <div className="min-h-screen !bg-[#001a1a] relative" style={{ backgroundColor: '#001a1a' }}>
-      {/* Grid Background */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNjAgNjBIMFYwaDYwdjYwem0tMi0yVjJIMnY1Nmg1NnoiIGZpbGw9IiMxYTFhMWEiIGZpbGwtcnVsZT0iZXZlbm9kZCIgb3BhY2l0eT0iMC4xIi8+PC9zdmc+')] opacity-20"></div>
-
+    <div 
+      className="min-h-screen bg-[#001a1a] relative"
+      style={{
+        backgroundImage: `url(${HeroBackground})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
       {/* Notification Banner */}
-      <div className="bg-gradient-to-r from-[#003333] to-[#006666] p-4 text-white">
+      <div 
+        className="p-4 text-white"
+        style={{
+          backgroundImage: `url(${BannerBackground})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      >
         <div className="container mx-auto flex items-center justify-center gap-2 text-sm md:text-base">
           <span className="font-bold">ATENÇÃO</span>
           <span>· Exclusivo para</span>
@@ -29,11 +42,11 @@ export default function HeroSection() {
         <div className="grid gap-8 md:grid-cols-2 md:gap-16">
           {/* Left Column */}
           <div className="flex flex-col justify-center space-y-6">
-            <div className="inline-block bg-gradient-to-r from-[#00FFD1] to-[#00C8DB] bg-clip-text text-transparent">
-              <svg width="120" height="40" viewBox="0 0 120 40">
-                <text x="0" y="30" className="text-2xl font-bold fill-current">TL mídias</text>
-              </svg>
-            </div>
+            <img 
+              src={TLMidiasLogo} 
+              alt="TL mídias"
+              className="w-32 h-auto mb-4"
+            />
             <h1 className="text-4xl font-bold text-white md:text-5xl lg:text-6xl">
               Faça seu delivery bater recorde de vendas com o método{' '}
               <span className="inline-block bg-gradient-to-r from-[#00FFD1] to-[#00C8DB] bg-clip-text text-transparent">MED.</span>
@@ -47,16 +60,16 @@ export default function HeroSection() {
           </div>
 
           {/* Right Column */}
-          <div className="relative">
+          <div className="relative flex items-end justify-end h-full">
             <img
               src={logo}
               alt="Mobile app demonstration"
-              className="relative z-10 mx-auto"
+              className="relative z-10 w-full max-w-2xl"
             />
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
